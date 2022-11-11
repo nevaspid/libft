@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/06 20:24:05 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/11 11:22:39 by nevaspid         ###   ########.fr       */
+/*   Created: 2022/11/10 14:16:28 by nevaspid          #+#    #+#             */
+/*   Updated: 2022/11/11 13:57:11 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,20 @@
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t lendest)
+size_t	ft_strlcat(char *dest, const char *src, size_t lendest)
 {
-size_t	i;
-size_t	lensrc;
+	size_t i;
+	size_t starter;
 
-lensrc = ft_strlen(src);
-if (lendest != 0)
-{
 	i = 0;
-	while (src[i] != '\0' && i < lendest - 1)
+	starter = ft_strlen(dest);
+	if (lendest = 0)
+	return (ft_strlen(src));
+	while (src[i] && i < lendest)
 	{
-		dest[i] = src[i];
+		dest[starter] = src[i];
 		i++;
+		starter++;
 	}
-	dest[i] = '\0';
-}
-return (lensrc);
-}
+	return (starter);
+	

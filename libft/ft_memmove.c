@@ -6,21 +6,11 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:19:29 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/07 20:53:00 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/11/11 11:22:26 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	i++;
-	return (i);
-}
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {

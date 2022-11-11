@@ -6,7 +6,7 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:40:25 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/09 16:17:35 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/11/11 14:00:49 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char				*ft_strcpy(char *s1, const char *s2);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
-size_t				ft_strlcat(char *dest, const char *src, size_t size);
+size_t				ft_strlcat(char *dest, const char *src, size_t lendest);
 size_t				ft_strlcpy(char *dest, const char *src, size_t lendest);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
