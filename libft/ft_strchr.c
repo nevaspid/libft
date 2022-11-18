@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:15:25 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/16 11:58:28 by nevaspid         ###   ########.fr       */
+/*   Created: 2022/11/15 17:55:51 by nevaspid          #+#    #+#             */
+/*   Updated: 2022/11/16 11:51:57 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-int	ft_isdigit(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	int	i;
+	int	len;
+
+	i = 0;
+	len = ft_strlen(s);
+	while (i <= len)
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	return (0);
 }

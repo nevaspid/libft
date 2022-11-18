@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 14:16:28 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/16 12:44:32 by nevaspid         ###   ########.fr       */
+/*   Created: 2022/11/17 17:06:15 by nevaspid          #+#    #+#             */
+/*   Updated: 2022/11/17 17:18:21 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlcat(char *dest, const char *src, size_t destlimit)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	unsigned char *str1;
+	unsigned char *str2;
+	size_t i;
 
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
-	while (dest[i] && i < destlimit)
-		i++;
-	j = i;
-	if (destlimit > 0)
+	while (i < n && (str1[i] != '\0' || str2[i] != '\0'))
 	{
-		while (src[i - j] != '\0' && i < destlimit - 1)
-		{
-			dest[i] = src[i - j];
+		if (!ft_isascii(str1[i]) || !ft_isascii(str2[i]))
 			i++;
-		}
-		if (j < destlimit)
-			dest[i] = '\0';
+		if (str1[i] > str2[i] || !str2[i])
+			return (1);
+		if (str1[i] < str2[i] || !str1[i])
+			return (-1);
+		i++;
 	}
-	return (ft_strlen(src) + j);
+	return (0);
 }

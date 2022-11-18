@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 18:15:25 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/16 11:58:28 by nevaspid         ###   ########.fr       */
+/*   Created: 2022/11/15 17:18:38 by nevaspid          #+#    #+#             */
+/*   Updated: 2022/11/16 12:29:13 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-int	ft_isdigit(int c)
+int	ft_tolower(int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	if (c > 64 && c < 91)
+	{
+		c = c + 32;
+		return (c);
+	}
+	return (c);
 }

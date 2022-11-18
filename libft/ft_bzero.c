@@ -6,7 +6,7 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:56:47 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/07 16:16:10 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/11/16 12:06:25 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)s)[i] = '0';
+		((unsigned char *)s)[i] = '\0';
 		i++;
 	}
 }
