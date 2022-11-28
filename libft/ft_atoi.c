@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 18:55:54 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/24 18:54:13 by nevaspid         ###   ########.fr       */
+/*   Created: 2022/11/24 19:13:31 by nevaspid          #+#    #+#             */
+/*   Updated: 2022/11/27 17:10:09 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int ft_atoi(const char *str)
 {
-	size_t i;
-	size_t j;
+	int i;
+	int negamorph;
+	int number;
 
+	number = 0;
+	negamorph = 1;
 	i = 0;
-	j = 0;
-	if (!needle[0])
-		return ((char*)haystack);
-	while (haystack[i] && i < len)
-	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && i + j < len )
-		{
-			j++;
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
-		}
+	while (((str[i] >= 9 && str[i] <= 13) || str[i] == ' '))
 		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i++] == '-')
+			negamorph = -1;
 	}
-	return (NULL);
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		number *= 10;
+		number += str[i++] - 48;
+	}
+	number *= negamorph;
+	return (number);
 }
+
