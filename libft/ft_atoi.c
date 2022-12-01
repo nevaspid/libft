@@ -6,7 +6,7 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:13:31 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/27 17:10:09 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:49:51 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int i;
-	int negamorph;
-	int number;
+	int	i;
+	int	negamorph;
+	int	number;
 
 	number = 0;
 	negamorph = 1;
@@ -39,4 +39,3 @@ int ft_atoi(const char *str)
 	number *= negamorph;
 	return (number);
 }
-

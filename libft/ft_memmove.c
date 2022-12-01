@@ -6,7 +6,7 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:19:29 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/18 16:11:10 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:45:56 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,25 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	size_t			i;
-	const char		*tempsrc;
-	char			*tempdest;
+	char *tempsrc;
+	char *tempdest;
+	size_t i;
 
-	i = 0;
-	tempdest = (char *)dest;
-	tempsrc = (const char *)src;
-	if (!tempsrc && !tempdest)
+	if (!dest && !src)
 		return (0);
-	else if (ft_strlen(tempdest) < ft_strlen(tempsrc))
+	i = 0;
+	tempsrc = (char *)src;
+	tempdest = (char *)dest;
+	if (tempdest > tempsrc)
 	{
-		i = len - 1;
-		while (i < len)
-		{
-			tempdest[i] = tempsrc[i];
-			i--;
-		}
-		dest = tempdest;
-		return (dest);
+		while (len-- > 0)
+			tempdest[len] = tempsrc[len];
+		return (tempdest);
 	}
-	else
+	while (i < len)
 	{
-		while (i < len)
-		{
-			tempdest[i] = tempsrc[i];
-			i++;
-		}
-		dest = tempdest;
-		return (dest);
+		tempdest[i] = tempsrc[i];
+		i++;
 	}
+	return (tempdest);
 }
