@@ -6,7 +6,7 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:40:25 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/28 20:52:52 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:41:51 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ typedef struct s_list
 	struct s_list	*next;
 
 }					t_list;
-
-/*
-** First Part
-*/
 
 void		ft_bzero(void *s, size_t n);
 void		*ft_memset(void *b, int c, size_t len);
@@ -55,5 +51,8 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int			ft_atoi(const char *str);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_strdup(const char *s);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char 		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strtrim(char const *s1, char const *set);
 
 #endif

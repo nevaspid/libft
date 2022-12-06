@@ -6,16 +6,16 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 20:48:59 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/01 15:16:20 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:30:58 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*final_s;
-	int	i;
+	int		i;
 
 	i = ft_strlen(s);
 	final_s = malloc(sizeof(char) * (i + 1));

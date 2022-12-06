@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 11:19:29 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/01 15:31:21 by nevaspid         ###   ########.fr       */
+/*   Created: 2022/12/03 19:14:43 by nevaspid          #+#    #+#             */
+/*   Updated: 2022/12/03 20:54:14 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	char	*tempsrc;
-	char	*tempdest;
 	size_t	i;
+	size_t	j;
+	char	*mariage;
 
-	if (!dest && !src)
-		return (0);
 	i = 0;
-	tempsrc = (char *)src;
-	tempdest = (char *)dest;
-	if (tempdest > tempsrc)
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	mariage = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!mariage)
+		return (NULL);
+	while (s1[i])
 	{
-		while (len-- > 0)
-			tempdest[len] = tempsrc[len];
-		return (tempdest);
-	}
-	while (i < len)
-	{
-		tempdest[i] = tempsrc[i];
+		mariage[i] = s1[i];
 		i++;
 	}
-	return (tempdest);
+	while (s2[j])
+		mariage[i++] = s2[j++];
+	mariage[i] = '\0';
+	return	(mariage);
 }
