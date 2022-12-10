@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/03 19:14:43 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/10 14:05:49 by nevaspid         ###   ########.fr       */
+/*   Created: 2022/12/07 16:00:18 by nevaspid          #+#    #+#             */
+/*   Updated: 2022/12/09 14:11:55 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-	size_t	j;
-	char	*mariage;
-
+	int i;
+	
 	i = 0;
-	j = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	mariage = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!mariage)
-		return (NULL);
-	while (s1[i])
+	if (!s)
+		return ;
+	while (s[i])
 	{
-		mariage[i] = s1[i];
+		f(i, &s[i]);
 		i++;
 	}
-	while (s2[j])
-		mariage[i++] = s2[j++];
-	mariage[i] = '\0';
-	return (mariage);
 }

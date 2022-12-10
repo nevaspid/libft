@@ -6,7 +6,7 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:40:25 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/05 15:41:51 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/10 14:13:09 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ int			ft_atoi(const char *str);
 void		*ft_calloc(size_t count, size_t size);
 char		*ft_strdup(const char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
-char 		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+char		**ft_split(char const *s, char c);
 
 #endif

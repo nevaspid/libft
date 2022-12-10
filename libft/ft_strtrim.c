@@ -6,16 +6,16 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 15:40:42 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/05 21:20:26 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/07 15:53:27 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	if (!s1)
