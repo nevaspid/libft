@@ -6,7 +6,7 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:11:57 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/16 18:28:47 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/16 19:58:05 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,35 +66,22 @@ char	**iamfree(char **tab)
 	free(tab);
 	return (NULL);
 }
-
-char	**ft_split(char const *s, char c)
+char	**ft_split_extand(char const *s, char c, char **tab, int index)
 {
 	int		inside;
-	int		index;
 	size_t	i;
-	char	**tab;
 
 	i = 0;
-	index = 0;
 	inside = 0;
-	if (!s)
-		return (NULL);
-	tab = malloc(sizeof(char *) * (countwords(s, c) + 1));
-	if (!tab)
-		return (NULL);
-	while (s[i])
+	while (s[i] && i < ft_strlen(s))
 	{
 		while (s[i] == c && s[i])
 		{
 			inside = 0;
-			i++;
-			if (s[i] == '\0')
-			{
+			if (s[++i] == '\0')
 				tab[index] = 0;
-				return (tab);
-			}
 		}
-		if (inside == 0)
+		if (inside == 0 && i < ft_strlen(s))
 		{
 			inside = 1;
 			tab[index++] = ft_substr(s, i, ft_strlen_split(s, c, i));
@@ -102,8 +89,25 @@ char	**ft_split(char const *s, char c)
 				return (iamfree(tab));
 			i += ft_strlen_split(s, c, i) - 1;
 		}
-		i++;
+		if (++i > ft_strlen(s))
+			i -= 1;
 	}
-	tab[countwords(s, c)] = 0;
+	return (tab);
+}
+char	**ft_split(char const *s, char c)
+{
+	int		index;
+	char	**tab;
+
+	index = 0;
+	if (!s)
+		return (NULL);
+	tab = malloc(sizeof(char *) * (countwords(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	tab = ft_split_extand(s, c, tab, index);
+	if (!tab)
+		return (NULL);
+	tab[countwords(s, c)] = NULL;
 	return (tab);
 }
