@@ -6,11 +6,12 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:11:57 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/16 19:58:05 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/16 20:13:44 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	countwords(const char *s, char c)
 {
@@ -64,8 +65,9 @@ char	**iamfree(char **tab)
 		i++;
 	}
 	free(tab);
-	return (NULL);
+	return (0);
 }
+
 char	**ft_split_extand(char const *s, char c, char **tab, int index)
 {
 	int		inside;
@@ -94,6 +96,7 @@ char	**ft_split_extand(char const *s, char c, char **tab, int index)
 	}
 	return (tab);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	int		index;
@@ -101,13 +104,13 @@ char	**ft_split(char const *s, char c)
 
 	index = 0;
 	if (!s)
-		return (NULL);
+		return (0);
 	tab = malloc(sizeof(char *) * (countwords(s, c) + 1));
 	if (!tab)
-		return (NULL);
+		return (0);
 	tab = ft_split_extand(s, c, tab, index);
 	if (!tab)
-		return (NULL);
-	tab[countwords(s, c)] = NULL;
+		return (0);
+	tab[countwords(s, c)] = 0;
 	return (tab);
 }
