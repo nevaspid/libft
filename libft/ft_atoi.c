@@ -6,14 +6,11 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:13:31 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/28 20:49:51 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:18:18 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int	ft_atoi(const char *str)
 {

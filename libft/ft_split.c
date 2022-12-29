@@ -6,12 +6,11 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 14:11:57 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/16 20:13:44 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/17 15:51:15 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	countwords(const char *s, char c)
 {

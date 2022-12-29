@@ -6,13 +6,11 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 17:55:51 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/16 11:51:57 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:19:58 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {

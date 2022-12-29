@@ -6,13 +6,11 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:16:28 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/12/09 13:55:03 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:51:27 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t destlimit)
 {
@@ -21,7 +19,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t destlimit)
 
 	i = 0;
 	if (destlimit == 0)
-		return (0);
+		return (ft_strlen(src));
 	while (dest[i] && i < destlimit)
 		i++;
 	j = i;

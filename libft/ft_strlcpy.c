@@ -6,13 +6,11 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/06 20:24:05 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/11 16:34:14 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:20:14 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t destlimit)
 {

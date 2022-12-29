@@ -6,13 +6,11 @@
 /*   By: nevaspid <romain.brendle.guido@gmail.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 17:18:38 by nevaspid          #+#    #+#             */
-/*   Updated: 2022/11/16 12:29:13 by nevaspid         ###   ########.fr       */
+/*   Updated: 2022/12/19 20:20:34 by nevaspid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 int	ft_tolower(int c)
 {
